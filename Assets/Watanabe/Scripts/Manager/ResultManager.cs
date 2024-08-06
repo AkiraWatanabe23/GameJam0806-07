@@ -12,6 +12,22 @@ public class ResultManager : MonoBehaviour
     [SerializeField]
     private Sprite _failedImage = default;
 
+    [Header("For Server")]
+    [SerializeField]
+    private GameObject[] _serverObjects = default;
+    [Header("For SpreadSheet")]
+    [SerializeField]
+    private GameObject[] _sheetObjects = default;
+
+    private void Awake()
+    {
+#if UNITY_EDITOR
+        foreach (var go in _sheetObjects) { go.SetActive(false); }
+#else
+        foreach (var go in _serverObjects) { go.SetActive(false); }
+#endif
+    }
+
     private void Start()
     {
         InitializeUI();
