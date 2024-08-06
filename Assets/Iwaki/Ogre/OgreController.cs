@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class OgreController : MonoBehaviour
 {
+    [SerializeField] bool canThrow;
     [SerializeField] GameObject kanabou;
     [SerializeField] Transform target;
     [SerializeField] float interval, throwSpeed;
@@ -19,12 +20,15 @@ public class OgreController : MonoBehaviour
 
     void Update()
     {
-        t += Time.deltaTime;
-
-        if (t > interval)
+        if (canThrow)
         {
-            t = 0;
-            Throw();
+            t += Time.deltaTime;
+
+            if (t > interval)
+            {
+                t = 0;
+                Throw();
+            }
         }
     }
 
@@ -34,5 +38,10 @@ public class OgreController : MonoBehaviour
         var obj = Instantiate(this.kanabou);
         var kanabou = obj.GetComponent<KanabouController>();
         kanabou.Throw(transform, target, throwSpeed);
+    }
+
+    public void ChangeThrowable(bool canThrow)
+    {
+        this.canThrow = canThrow;
     }
 }
