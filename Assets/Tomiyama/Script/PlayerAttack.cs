@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField, Header("攻撃後のインターバル")] float _attackInterval;
     Collider2D _collider;
     PlayerMove _playerMove;
+    Animator _anim;
     bool _canAttack = true;
     public bool CanAttack { get => _canAttack; set => _canAttack = value; }
 
@@ -15,6 +16,7 @@ public class PlayerAttack : MonoBehaviour
     {
         _collider = GetComponent<Collider2D>();
         _playerMove = FindObjectOfType<PlayerMove>();
+        _anim = GetComponentInParent<Animator>();
         _collider.enabled = false;
     }
     void Update()
@@ -27,6 +29,7 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator Attack()
     {
         Debug.Log("Attack");
+        _anim.SetTrigger("Attack");
         _canAttack = false;
         _collider.enabled = true;
         yield return new WaitForSeconds(_attackDuration);
@@ -36,7 +39,7 @@ public class PlayerAttack : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Contains("Enemy"))
+        if (collision.gameObject.TryGetComponent<EnemyDamage>(out _))
         {
             _playerMove.JumpCount = 2;
             _playerMove.Jump();

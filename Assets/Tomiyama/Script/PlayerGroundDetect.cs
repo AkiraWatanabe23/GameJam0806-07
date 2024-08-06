@@ -3,14 +3,17 @@ using UnityEngine;
 public class PlayerGroundDetect : MonoBehaviour
 {
     PlayerMove _playerMove;
+    Animator _anim;
     void Start()
     {
         _playerMove = FindObjectOfType<PlayerMove>();
+        _anim = GetComponentInParent<Animator>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name.Contains("Ground"))
         {
+            _anim.SetBool("IsGrounded", true);
             _playerMove.JumpCount = 2;
         }
     }
