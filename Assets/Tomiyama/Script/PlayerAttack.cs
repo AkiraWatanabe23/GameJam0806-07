@@ -6,6 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField, Header("攻撃持続時間")] float _attackDuration = default;
     [SerializeField, Header("攻撃後のインターバル")] float _attackInterval = default;
+    [SerializeField, Header("敵ヒット時のジャンプ力")] float _jumpPowerWhenAttackedToEnemy = default;
     Collider2D _collider = default;
     PlayerMove _playerMove = default;
     Animator _anim = default;
@@ -42,7 +43,7 @@ public class PlayerAttack : MonoBehaviour
         if (collision.gameObject.TryGetComponent<EnemyDamage>(out _))
         {
             _playerMove.JumpCount = 2;
-            _playerMove.Jump();
+            _playerMove.JumpWhenAttackedAtEnemy(_jumpPowerWhenAttackedToEnemy);
         }
     }
 }
