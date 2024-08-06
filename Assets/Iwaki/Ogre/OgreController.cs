@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Timeline;
 
-public class OgreController : MonoBehaviour
+public class OgreController : MonoBehaviour, IEnemyAttackable
 {
-    [SerializeField] bool canThrow;
     [SerializeField] GameObject kanabou;
     [SerializeField] Transform target;
     [SerializeField] float interval, throwSpeed;
+    [SerializeField] bool canAttack;
     Rigidbody2D rb;
     Animator animator;
     float t;
@@ -20,7 +21,7 @@ public class OgreController : MonoBehaviour
 
     void Update()
     {
-        if (canThrow)
+        if (canAttack)
         {
             t += Time.deltaTime;
 
@@ -38,10 +39,11 @@ public class OgreController : MonoBehaviour
         var obj = Instantiate(this.kanabou);
         var kanabou = obj.GetComponent<KanabouController>();
         kanabou.Throw(transform, target, throwSpeed);
+        Destroy(obj, 5);
     }
 
-    public void ChangeAttackable(bool canAttack)
+    public void SetAttackable(bool canAttack)
     {
-        this.canThrow = canAttack;
+        this.canAttack = canAttack;
     }
 }

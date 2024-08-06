@@ -53,10 +53,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defeatEffect: {fileID: 9182604833507860623, guid: 5a7eae2d01f72d54f8209fdbbe671852, type: 3}
   effectOffset: {fileID: 2263780265489983651}
+  attackObject: {fileID: 6518692575453320665, guid: dcdb2ee37aaad9a4b811b7c964f397a2, type: 3}
+  attackOffset: {fileID: 3815147188259102845}
   rotationSpeed: 2
   amplitude: 130
+  attackInterval: 2
+  attackSpeed: 7
   takenDamageObjectTag: Weapon
   stopRotateWhenDefeated: 1
+  canAttack: 1
+  playerDetectFromDistance: 1
+  detectDistance: 10
 --- !u!61 &322617075233883228
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -89,7 +96,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.5}
+  m_Offset: {x: -0.020466045, y: -1.3908474}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -100,7 +107,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 3}
+  m_Size: {x: 0.24093208, y: 3.218305}
   m_EdgeRadius: 0
 --- !u!58 &1147417488716872898
 CircleCollider2D:
