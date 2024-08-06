@@ -5,7 +5,7 @@ public class MoveCamera : MonoBehaviour
     [SerializeField] float camerasHigh = 5.4f;//ƒJƒƒ‰‚Ì‚‚³
     Transform myTransform;
     Vector3 pos;
-    HeightUI heightUI;
+    [SerializeField]HeightUI heightUI;
     PlayerMove player;
     // Start is called before the first frame update
     void Start()

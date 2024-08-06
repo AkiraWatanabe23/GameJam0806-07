@@ -144,6 +144,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3955145978518774840, guid: 6d5183185dc299541a1b803d0f7d9fea, type: 3}
   m_PrefabInstance: {fileID: 6133258551715565261}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &292395261 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6009089879373875048, guid: 6d5183185dc299541a1b803d0f7d9fea, type: 3}
+  m_PrefabInstance: {fileID: 6133258551715565261}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac71099ea1941784e89659d00141623d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &446130995 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6734719578602764073, guid: 49aac38f58f8d8c42a3f7f41412d2d30, type: 3}
@@ -496,6 +507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camerasHigh: 6
+  heightUI: {fileID: 292395261}
 --- !u!4 &1547078423 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7462856530637113120, guid: 49aac38f58f8d8c42a3f7f41412d2d30, type: 3}
