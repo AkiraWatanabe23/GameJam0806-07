@@ -2,8 +2,8 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class PlayerGroundDetect : MonoBehaviour
 {
-    PlayerMove _playerMove;
-    Animator _anim;
+    PlayerMove _playerMove = default;
+    Animator _anim = default;
     void Start()
     {
         _playerMove = FindObjectOfType<PlayerMove>();

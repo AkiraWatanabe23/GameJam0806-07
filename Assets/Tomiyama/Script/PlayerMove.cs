@@ -13,7 +13,7 @@ public class PlayerMove : MonoBehaviour
     float _defaultGravityScale = default;
     float _h = default;
     Rigidbody2D _rb = default;
-    Animator _anim;
+    Animator _anim = default;
     /// <summary>c‚èƒWƒƒƒ“ƒv‰ñ”</summary>
     private int _jumpCount = 2;
     public int JumpCount { get => _jumpCount; set => _jumpCount = value; }

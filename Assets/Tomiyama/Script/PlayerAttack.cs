@@ -4,11 +4,11 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField, Header("UŒ‚Ž‘±ŽžŠÔ")] float _attackDuration;
-    [SerializeField, Header("UŒ‚Œã‚ÌƒCƒ“ƒ^[ƒoƒ‹")] float _attackInterval;
-    Collider2D _collider;
-    PlayerMove _playerMove;
-    Animator _anim;
+    [SerializeField, Header("UŒ‚Ž‘±ŽžŠÔ")] float _attackDuration = default;
+    [SerializeField, Header("UŒ‚Œã‚ÌƒCƒ“ƒ^[ƒoƒ‹")] float _attackInterval = default;
+    Collider2D _collider = default;
+    PlayerMove _playerMove = default;
+    Animator _anim = default;
     bool _canAttack = true;
     public bool CanAttack { get => _canAttack; set => _canAttack = value; }
 
