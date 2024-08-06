@@ -39,6 +39,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         _playerTransform = _player.transform;
 
         PlayerPrefs.DeleteAll();
+        AudioManager.Instance.PlayBGM(BGMType.InGame);
     }
 
     private void Update()
