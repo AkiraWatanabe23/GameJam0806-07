@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
     public int Hp { get => _hp; set => _hp = value; }
     Animator _anim = default;
 
+    [SerializeField]HitPointUI hitPointUI;
+
     private void Awake()
     {
         _hp = _maxHp;
@@ -46,6 +48,7 @@ public class PlayerHealth : MonoBehaviour
             else
             {
                 _hp--;
+                hitPointUI.Damage();
                 Debug.Log($"Damage Taken (Current HP:{_hp}");
                 Instantiate(_damageParticle, collision.ClosestPoint(transform.position), Quaternion.identity, transform);
                 _timer = _invincibleTime;

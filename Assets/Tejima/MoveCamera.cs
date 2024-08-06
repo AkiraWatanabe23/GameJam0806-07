@@ -22,12 +22,12 @@ public class MoveCamera : MonoBehaviour
         {
             Debug.Log("Hit");
             pos.y += camerasHigh * 2;
-            //heightUI.Climb();
+            heightUI.Climb();
         }
         else if (transform.position.y - camerasHigh > player.gameObject.transform.position.y)
         {
             pos.y -= camerasHigh * 2;
-            //heightUI.Drop();
+            heightUI.Drop();
         }
         myTransform.position = pos;
     }
