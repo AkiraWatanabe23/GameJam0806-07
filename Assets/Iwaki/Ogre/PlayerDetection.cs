@@ -7,6 +7,14 @@ public class PlayerDetection : MonoBehaviour
     [SerializeField] GameObject enemy;
     IEnemyAttackable attack;
 
+    private void Update()
+    {
+        if (enemy == null)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GetInterface();
@@ -21,13 +29,16 @@ public class PlayerDetection : MonoBehaviour
 
     void GetInterface()
     {
-        var com = enemy.GetComponents<MonoBehaviour>();
-        foreach (var c in com)
+        if (enemy != null)
         {
-            if (c is IEnemyAttackable)
+            var com = enemy.GetComponents<MonoBehaviour>();
+            foreach (var c in com)
             {
-                attack = c as IEnemyAttackable;
-                break;
+                if (c is IEnemyAttackable)
+                {
+                    attack = c as IEnemyAttackable;
+                    break;
+                }
             }
         }
     }

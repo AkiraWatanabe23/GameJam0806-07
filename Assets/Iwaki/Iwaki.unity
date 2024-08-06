@@ -575,7 +575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308391790180327139, guid: 59dae4dc4a0e82946bb032d1ff28951c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2431710077260407213, guid: 59dae4dc4a0e82946bb032d1ff28951c, type: 3}
       propertyPath: obj
@@ -661,6 +661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 402463035}
   _goal: {fileID: 0}
+  _time: 0
   _debugMode: 1
   _isGoal: 0
 --- !u!4 &2015550916
@@ -746,6 +747,22 @@ PrefabInstance:
     - target: {fileID: 1326534036855724863, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
       propertyPath: m_Name
       value: Ogre
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141240314050972151, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
+      propertyPath: m_Size.x
+      value: 2.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141240314050972151, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
+      propertyPath: m_Size.y
+      value: 3.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141240314050972151, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141240314050972151, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 6231011755684634410, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
       propertyPath: m_LocalPosition.x

@@ -63,7 +63,7 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
     {
         if (collision.CompareTag("Weapon"))
         {
-            var colliders = GetComponents<Collider2D>();
+            var colliders = GetComponentsInChildren<Collider2D>();
             foreach (var collider in colliders)
             {
                 collider.enabled = false;
