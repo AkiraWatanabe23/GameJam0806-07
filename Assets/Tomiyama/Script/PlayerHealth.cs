@@ -2,6 +2,8 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField, Header("ダメージを受けた時のパーティクル")]
+    GameObject _damageParticle;
     [SerializeField, Header("ダメージ後の無敵時間")]
     private float _invincibleTime = 2;
     private float _timer = default;
@@ -45,6 +47,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 _hp--;
                 Debug.Log($"Damage Taken (Current HP:{_hp}");
+                Instantiate(_damageParticle, collision.ClosestPoint(transform.position), Quaternion.identity);
                 _timer = _invincibleTime;
             }
         }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4671728251931568126}
   m_Layer: 0
   m_Name: PlayerAttackHitbox
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +62,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -417,7 +417,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feeecd4c784bed044a72987ecdfffb81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _invinsibleTime: 2
+  _damageParticle: {fileID: 0}
+  _invincibleTime: 2
   _maxHp: 5
 --- !u!70 &5468037145596531689
 CapsuleCollider2D:

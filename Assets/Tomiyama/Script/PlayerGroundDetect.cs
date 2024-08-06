@@ -17,4 +17,8 @@ public class PlayerGroundDetect : MonoBehaviour
             _playerMove.JumpCount = 2;
         }
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        _playerMove.JumpCount = 1;
+    }
 }
