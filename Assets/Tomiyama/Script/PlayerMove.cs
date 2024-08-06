@@ -30,6 +30,7 @@ public class PlayerMove : MonoBehaviour
         _h = Input.GetAxisRaw("Horizontal");
         _rb.velocity = new Vector2(_h * _speed, _rb.velocity.y);
         _anim.SetBool("IsMoving", (_h != 0));
+        _anim.SetFloat("MoveY", _rb.velocity.y);
         if (_h != 0)
         {
             transform.localScale = new Vector3(-_h, 1, 1);
