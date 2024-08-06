@@ -51,7 +51,12 @@ public enum BGMType
 public enum SEType
 {
     None,
+    Move,
+    Jump,
     Attack,
     Damaged,
+    Soul,
+    Throw,
+    EnemyDead,
     Click
 }

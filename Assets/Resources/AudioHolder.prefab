@@ -48,7 +48,7 @@ MonoBehaviour:
   - _bgmType: 1
     _bgmClip: {fileID: 8300000, guid: 3461fe1a48ee4864280cd7e21094b277, type: 3}
   - _bgmType: 2
-    _bgmClip: {fileID: 8300000, guid: e1cf2ee1f7fd32d4291edecf82254eb7, type: 3}
+    _bgmClip: {fileID: 8300000, guid: 9fc5de6025042154e936a30e0c4ac85d, type: 3}
   - _bgmType: 3
     _bgmClip: {fileID: 8300000, guid: ec08a63c0e397f2419b387bac1a69508, type: 3}
   - _bgmType: 4
