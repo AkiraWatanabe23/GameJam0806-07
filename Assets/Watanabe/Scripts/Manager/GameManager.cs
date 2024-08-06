@@ -6,6 +6,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     private GameObject _player = default;
     [SerializeField]
     private Transform _goal = default;
+    [ReadOnly]
+    [SerializeField]
+    private float _time = 0f;
 
     [Header("Debug")]
     [SerializeField]
@@ -37,6 +40,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             _player = GameObject.Find("Player");
         }
         _playerTransform = _player.transform;
+        _time = 0f;
 
         PlayerPrefs.DeleteAll();
         AudioManager.Instance.PlayBGM(BGMType.InGame);
@@ -44,10 +48,12 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     private void Update()
     {
+        _time += Time.deltaTime;
         if (IsGoal)
         {
             //ここでクリアしたデータを保存する
             PlayerPrefs.SetString("ClearData", "Clear");
+            PlayerPrefs.SetInt("Score", (int)(_time * 10));
 
             SceneLoader.FadeLoad(SceneName.Result);
         }
@@ -57,6 +63,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public void PlayerDead()
     {
         PlayerPrefs.SetString("ClearData", "Failed");
+        PlayerPrefs.SetInt("Score", 0);
         SceneLoader.FadeLoad(SceneName.Result);
     }
 }
