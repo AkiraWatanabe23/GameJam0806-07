@@ -756,13 +756,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spider
       objectReference: {fileID: 0}
+    - target: {fileID: 2697970930093299410, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
+      propertyPath: amplitude
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3657387054472979877, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.6068854
+      objectReference: {fileID: 0}
+    - target: {fileID: 3657387054472979877, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3657387054472979877, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.3225
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815147188259102845, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.07
+      objectReference: {fileID: 0}
     - target: {fileID: 4156321169012661961, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.82
+      value: -4.44
       objectReference: {fileID: 0}
     - target: {fileID: 4156321169012661961, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.84
+      value: 5.03
       objectReference: {fileID: 0}
     - target: {fileID: 4156321169012661961, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -795,6 +815,14 @@ PrefabInstance:
     - target: {fileID: 4156321169012661961, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865865899764920855, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
+      propertyPath: m_Size.x
+      value: 2.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865865899764920855, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.07
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

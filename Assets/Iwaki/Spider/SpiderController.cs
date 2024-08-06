@@ -12,14 +12,14 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
     [SerializeField] float detectDistance;
     Rigidbody2D rb;
     bool isDefeated;
-    Animator animator;
+    //Animator animator;
     float t;
     Transform player;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         player = FindAnyObjectByType<PlayerMove>().transform;
     }
     void Update()
@@ -72,7 +72,7 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
             if (!isDefeated)
             {
                 isDefeated = true;
-                animator.Play("Defeat");
+                //animator.Play("Defeat");
                 rb.gravityScale = 1;
                 if (stopRotateWhenDefeated) rb.angularVelocity = 0;
                 rb.AddForce(Vector2.up * 5, ForceMode2D.Impulse);

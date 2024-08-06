@@ -7,7 +7,7 @@ public class OgreController : MonoBehaviour, IEnemyAttackable
 {
     [SerializeField] GameObject kanabou;
     [SerializeField] Transform target;
-    [SerializeField] float interval, throwSpeed;
+    [SerializeField] float interval, throwSpeed, throwAnimationOffset;
     [SerializeField] bool canAttack;
     Rigidbody2D rb;
     Animator animator;
@@ -25,6 +25,11 @@ public class OgreController : MonoBehaviour, IEnemyAttackable
         {
             t += Time.deltaTime;
 
+            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Throw") && t + throwAnimationOffset > interval)
+            {
+                animator.Play("Throw");
+            }
+
             if (t > interval)
             {
                 t = 0;
@@ -35,7 +40,6 @@ public class OgreController : MonoBehaviour, IEnemyAttackable
 
     void Throw()
     {
-        animator.Play("Throw");
         var obj = Instantiate(this.kanabou);
         var kanabou = obj.GetComponent<KanabouController>();
         kanabou.Throw(transform, target, throwSpeed);
