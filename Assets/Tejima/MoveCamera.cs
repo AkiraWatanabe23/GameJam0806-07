@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveCamera : MonoBehaviour
 {
-    [SerializeField] int camerasHigh = 10;//ƒJƒƒ‰‚Ì‚‚³
+    [SerializeField] float camerasHigh = 5.4f;//ƒJƒƒ‰‚Ì‚‚³
     Transform myTransform;
     Vector3 pos;
     HeightUI heightUI;
