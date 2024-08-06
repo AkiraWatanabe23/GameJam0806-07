@@ -498,10 +498,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spider
       objectReference: {fileID: 0}
-    - target: {fileID: 2697970930093299410, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
-      propertyPath: stopRotateWhenDefeated
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4156321169012661961, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.82
@@ -541,22 +537,6 @@ PrefabInstance:
     - target: {fileID: 4156321169012661961, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7685167503411298669, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-    - target: {fileID: 7685167503411298669, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8134750313395250717, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-    - target: {fileID: 8134750313395250717, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
