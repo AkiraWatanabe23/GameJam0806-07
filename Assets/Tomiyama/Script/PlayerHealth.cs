@@ -34,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent<EnemyDamage>(out _) && _timer <= 0)
+        if (collision.gameObject.CompareTag("Enemy") && _timer <= 0)
         {
             _anim.SetBool("IsInvincible", true);
             if (_hp - 1 == 0)
