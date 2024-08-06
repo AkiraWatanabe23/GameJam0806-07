@@ -40,11 +40,18 @@ public class PlayerMove : MonoBehaviour
         }
         _rb.gravityScale = _rb.velocity.y < 0 ? _fallingGravityScale : _defaultGravityScale;
     }
-    public void Jump()
+    void Jump()
     {
         Debug.Log("Jump");
         _anim.SetBool("IsGrounded", false);
         _rb.velocity = (_jumpCount == 2) ? new Vector2(_rb.velocity.x, _jumpPower) : new Vector2(_rb.velocity.x, _midJumpPower);
+        _jumpCount--;
+    }
+    public void JumpWhenAttackedAtEnemy(float jumpPower)
+    {
+        Debug.Log("Hit by enemy Jump");
+        _anim.SetBool("IsGrounded", false);
+        _rb.velocity = new Vector2(_rb.velocity.x, jumpPower);
         _jumpCount--;
     }
 }
