@@ -13,12 +13,13 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
     Rigidbody2D rb;
     bool isDefeated;
     //Animator animator;
-    float t;
+    float attackTime, startTime;
     Transform player;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        startTime = Time.time;
         //animator = GetComponent<Animator>();
         player = FindAnyObjectByType<PlayerMove>().transform;
     }
@@ -26,7 +27,7 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
     {
         if (!isDefeated)
         {
-            rb.angularVelocity = Mathf.Cos(Time.time * rotationSpeed) * amplitude;
+            rb.angularVelocity = Mathf.Cos((Time.time - startTime) * rotationSpeed) * amplitude;
 
             if (playerDetectFromDistance)
             {
@@ -35,10 +36,10 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
 
             if (canAttack)
             {
-                t += Time.deltaTime;
-                if (t > attackInterval)
+                attackTime += Time.deltaTime;
+                if (attackTime > attackInterval)
                 {
-                    t = 0;
+                    attackTime = 0;
                     Attack();
                 }
             }
