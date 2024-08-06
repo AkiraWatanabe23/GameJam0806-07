@@ -37,6 +37,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             _player = GameObject.Find("Player");
         }
         _playerTransform = _player.transform;
+
+        PlayerPrefs.DeleteAll();
     }
 
     private void Update()
@@ -44,7 +46,16 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         if (IsGoal)
         {
             //ここでクリアしたデータを保存する
+            PlayerPrefs.SetString("ClearData", "Clear");
+
             SceneLoader.FadeLoad(SceneName.Result);
         }
+    }
+
+    /// <summary> PlayerのHPがなくなったときに呼ばれる関数 </summary>
+    public void PlayerDead()
+    {
+        PlayerPrefs.SetString("ClearData", "Failed");
+        SceneLoader.FadeLoad(SceneName.Result);
     }
 }
