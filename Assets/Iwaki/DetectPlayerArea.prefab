@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7321376617201097768}
   - component: {fileID: 2431710077260407213}
   m_Layer: 0
-  m_Name: OgreDetectPlayerArea
+  m_Name: DetectPlayerArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.82, y: -0.21, z: 0.019311966}
-  m_LocalScale: {x: 13.789964, y: 7.98508, z: 4.486}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10, y: 10}
   m_EdgeRadius: 0
 --- !u!114 &2431710077260407213
 MonoBehaviour:
@@ -90,4 +90,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab16ab45108a97a409c4f0fb3df82528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ogre: {fileID: 0}

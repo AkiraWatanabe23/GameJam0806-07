@@ -3,36 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class SpiderController : MonoBehaviour
+public class SpiderController : MonoBehaviour, IEnemyAttackable
 {
-    [SerializeField] GameObject defeatEffect, effectOffset, AttackObject;
-    [SerializeField] float rotationSpeed, amplitude, attackInterval;
-    [SerializeField] string takenDamageObjectTag;
-    [SerializeField] bool stopRotateWhenDefeated;
+    [SerializeField] GameObject defeatEffect, effectOffset, attackObject;
+    [SerializeField] Transform attackOffset;
+    [SerializeField] float rotationSpeed, amplitude, attackInterval, attackSpeed;
+    [SerializeField] bool stopRotateWhenDefeated, canAttack, playerDetectFromDistance;
+    [SerializeField] float detectDistance;
     Rigidbody2D rb;
-    bool isDefeated, canAttack;
+    bool isDefeated;
     Animator animator;
     float t;
+    Transform player;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        player = FindAnyObjectByType<PlayerMove>().transform;
     }
     void Update()
     {
         if (!isDefeated)
         {
             rb.angularVelocity = Mathf.Cos(Time.time * rotationSpeed) * amplitude;
-        }
 
-        if (canAttack)
-        {
-            t += Time.deltaTime;
-            if (t > attackInterval)
+            if (playerDetectFromDistance)
             {
-                t = 0;
-                Attack();
+                SetAttackable(detectDistance * detectDistance > Vector2.SqrMagnitude(player.position - attackOffset.position));
+            }
+
+            if (canAttack)
+            {
+                t += Time.deltaTime;
+                if (t > attackInterval)
+                {
+                    t = 0;
+                    Attack();
+                }
             }
         }
     }
@@ -42,15 +50,18 @@ public class SpiderController : MonoBehaviour
         var player = FindAnyObjectByType<PlayerMove>();
         if (player != null)
         {
-            var dir = player.transform.position - transform.position;
-            var attack = Instantiate(AttackObject);
-            attack.transform.position = transform.position;
+            var dir = (player.transform.position - attackOffset.position).normalized;
+            var attack = Instantiate(attackObject);
+            attack.transform.position = attackOffset.position;
+            attack.transform.up = dir;
+            attack.GetComponent<Rigidbody2D>().velocity = dir * attackSpeed;
+            Destroy(attack, 3);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision) //エネミーの挙動的に新しく撃破後オブジェクトを作るより楽そうなので独自に実装してます（後で消すと思う）
     {
-        if (collision.CompareTag(takenDamageObjectTag))
+        if (collision.CompareTag("Weapon"))
         {
             var colliders = GetComponents<Collider2D>();
             foreach (var collider in colliders)
@@ -74,4 +85,14 @@ public class SpiderController : MonoBehaviour
             }
         }
     }
+
+    public void SetAttackable(bool canAttack)
+    {
+        this.canAttack = canAttack;
+    }
+}
+
+public interface IEnemyAttackable
+{
+    void SetAttackable(bool canAttack);
 }
