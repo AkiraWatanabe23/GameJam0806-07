@@ -6,7 +6,6 @@ public class PlayerMove : MonoBehaviour
     [SerializeField, Header("プレイヤー速度")] float _speed = default;
     [SerializeField, Header("降下中のgravitiScale")] float _fallingGravityScale = default;
     Rigidbody2D _rb = default;
-    SpriteRenderer _sr = default;
     float _h = default;
     float _defaultGravityScale = default;
     /// <summary>ジャンプしたかどうか</summary>
@@ -16,7 +15,6 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _sr = GetComponent<SpriteRenderer>();
         _defaultGravityScale = _rb.gravityScale;
     }
 
@@ -26,7 +24,7 @@ public class PlayerMove : MonoBehaviour
         _rb.velocity = new Vector2(_h * _speed, _rb.velocity.y);
         if (_h != 0)
         {
-            _sr.flipX = (_h == -1) ? true : false;
+            transform.localScale = new Vector3(-_h, 1, 1);
         }
         if (Input.GetButtonDown("Jump") && _canJump)
         {
@@ -34,17 +32,10 @@ public class PlayerMove : MonoBehaviour
         }
         _rb.gravityScale = _rb.velocity.y < 0 ? _fallingGravityScale : _defaultGravityScale;
     }
-    private void Jump()
+    public void Jump()
     {
-        _rb.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
+        Debug.Log("Jump");
+        _rb.velocity = new Vector2(_rb.velocity.x, _jumpPower);
         _canJump = false;
-
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.name.Contains("Ground"))
-        {
-            _canJump = true;
-        }
     }
 }
