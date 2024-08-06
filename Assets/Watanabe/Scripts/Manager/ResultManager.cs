@@ -32,7 +32,7 @@ public class ResultManager : MonoBehaviour
         }
         else if (clearData == "Failed")
         {
-            _backGround.sprite = _clearImage;
+            _backGround.sprite = _failedImage;
             AudioManager.Instance.PlayBGM(BGMType.Failed);
         }
     }
