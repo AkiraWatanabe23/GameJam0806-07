@@ -28,10 +28,12 @@ public class ResultManager : MonoBehaviour
         if (clearData == "Clear")
         {
             _backGround.sprite = _clearImage;
+            AudioManager.Instance.PlayBGM(BGMType.Clear);
         }
         else if (clearData == "Failed")
         {
             _backGround.sprite = _clearImage;
+            AudioManager.Instance.PlayBGM(BGMType.Failed);
         }
     }
 }
