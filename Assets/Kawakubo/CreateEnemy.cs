@@ -8,10 +8,12 @@ public class CreateEnemy : MonoBehaviour
     private GameObject m_Enemy;
     private bool IsKilled = false;
     private Coroutine enumerator;
+    private Vector3 centar = Vector3.zero;
     // Start is called before the first frame update
     void Start()
     {
-        m_Enemy = Instantiate(Enemy);
+        centar = this.transform.position;
+        m_Enemy = Instantiate(Enemy,centar,Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class CreateEnemy : MonoBehaviour
         yield return new WaitForSeconds(5);
         if(IsKilled )
         {
-            m_Enemy = Instantiate(Enemy);
+            m_Enemy = Instantiate(Enemy,centar,Quaternion.identity);
             IsKilled = false;
         }
         StopCoroutine(enumerator);
