@@ -22,7 +22,7 @@ public class SpiderMove : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) //エネミーの挙動的に新しく撃破後オブジェクトを作るより楽そうなので独自に実装してます（後で消すと思う）
     {
         if (collision.CompareTag(takenDamageObjectTag))
         {
@@ -36,9 +36,11 @@ public class SpiderMove : MonoBehaviour
             {
                 rb.gravityScale = 1;
                 rb.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
-                var effect = Instantiate(defeatEffect);
-                effect.transform.position = effectOffset.transform.position;
-                isDefeated = true;
+                if (defeatEffect != null)
+                {
+                    var effect = Instantiate(defeatEffect);
+                    effect.transform.position = transform.position;
+                }
                 Destroy(gameObject, 3);
             }
         }
