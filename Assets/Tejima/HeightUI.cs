@@ -6,7 +6,6 @@ public class HeightUI : MonoBehaviour
     [SerializeField] Slider heightSlider;
     [SerializeField] float addValue = 0.1f;
     [SerializeField] bool isClimb = false;
-    HitPointUI hitPointUI;
     // Start is called before the first frame update
     void Start()
     {
