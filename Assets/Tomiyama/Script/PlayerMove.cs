@@ -2,15 +2,20 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField, Header("ジャンプ力")] float _jumpPower = default;
-    [SerializeField, Header("プレイヤー速度")] float _speed = default;
-    [SerializeField, Header("降下中のgravitiScale")] float _fallingGravityScale = default;
-    Rigidbody2D _rb = default;
-    float _h = default;
+    [SerializeField, Header("ジャンプ力")] 
+    float _jumpPower = default;
+    [SerializeField, Header("ジャンプ力（空中時）")] 
+    float _midJumpPower = default;
+    [SerializeField, Header("プレイヤー速度")] 
+    float _speed = default;
+    [SerializeField, Header("降下中のgravitiScale")] 
+    float _fallingGravityScale = default;
     float _defaultGravityScale = default;
-    /// <summary>ジャンプしたかどうか</summary>
-    private bool _canJump = true;
-    public bool CanJump { get => _canJump; set => _canJump = value; }
+    float _h = default;
+    Rigidbody2D _rb = default;
+    /// <summary>残りジャンプ回数</summary>
+    private int _jumpCount = 2;
+    public int JumpCount { get => _jumpCount; set => _jumpCount = value; }
 
     void Start()
     {
@@ -26,7 +31,7 @@ public class PlayerMove : MonoBehaviour
         {
             transform.localScale = new Vector3(-_h, 1, 1);
         }
-        if (Input.GetButtonDown("Jump") && _canJump)
+        if (Input.GetButtonDown("Jump") && _jumpCount > 0)
         {
             Jump();
         }
@@ -35,7 +40,7 @@ public class PlayerMove : MonoBehaviour
     public void Jump()
     {
         Debug.Log("Jump");
-        _rb.velocity = new Vector2(_rb.velocity.x, _jumpPower);
-        _canJump = false;
+        _rb.velocity = (_jumpCount == 2) ? new Vector2(_rb.velocity.x, _jumpPower) : new Vector2(_rb.velocity.x, _midJumpPower);
+        _jumpCount--;
     }
 }

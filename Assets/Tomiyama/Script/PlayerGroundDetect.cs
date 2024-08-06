@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(Collider2D))]
 public class PlayerGroundDetect : MonoBehaviour
 {
     PlayerMove _playerMove;
@@ -13,7 +11,7 @@ public class PlayerGroundDetect : MonoBehaviour
     {
         if (collision.gameObject.name.Contains("Ground"))
         {
-            _playerMove.CanJump = true;
+            _playerMove.JumpCount = 2;
         }
     }
 }

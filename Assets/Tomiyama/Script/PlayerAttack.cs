@@ -9,6 +9,8 @@ public class PlayerAttack : MonoBehaviour
     Collider2D _collider;
     PlayerMove _playerMove;
     bool _canAttack = true;
+    public bool CanAttack { get => _canAttack; set => _canAttack = value; }
+
     private void Start()
     {
         _collider = GetComponent<Collider2D>();
@@ -36,6 +38,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (collision.gameObject.name.Contains("Enemy"))
         {
+            _playerMove.JumpCount = 2;
             _playerMove.Jump();
         }
     }
