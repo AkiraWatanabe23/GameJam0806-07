@@ -20,5 +20,6 @@ public class PlayerGroundDetect : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         _playerMove.JumpCount = 1;
+        _anim.SetBool("IsGrounded", false);
     }
 }
