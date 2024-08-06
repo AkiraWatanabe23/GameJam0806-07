@@ -10,7 +10,7 @@ public class EnemyDamage : MonoBehaviour
         var Attacker = collision.GetComponentInParent<PlayerAttack>();
         if (Attacker != null && !Attacker.CanAttack && collision.tag == "Weapon")
         {
-            _particles.Play();
+            _particles?.Play();
             Destroy(this.gameObject);
         }
     }
