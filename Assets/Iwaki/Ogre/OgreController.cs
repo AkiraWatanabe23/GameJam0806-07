@@ -8,7 +8,6 @@ public class OgreController : MonoBehaviour
     [SerializeField] Transform target;
     [SerializeField] float interval, throwSpeed;
     Rigidbody2D rb;
-
     Animator animator;
     float t;
 
@@ -31,6 +30,7 @@ public class OgreController : MonoBehaviour
 
     void Throw()
     {
+        animator.Play("Throw");
         var obj = Instantiate(this.kanabou);
         var kanabou = obj.GetComponent<KanabouController>();
         kanabou.Throw(transform, target, throwSpeed);

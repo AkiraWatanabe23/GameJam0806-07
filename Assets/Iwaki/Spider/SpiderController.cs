@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SpiderController : MonoBehaviour
 {
@@ -10,9 +11,11 @@ public class SpiderController : MonoBehaviour
     [SerializeField] bool stopRotateWhenDefeated;
     Rigidbody2D rb;
     bool isDefeated;
+    Animation animation;
 
     private void Start()
     {
+        animation = GetComponent<Animation>();
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()
@@ -36,6 +39,7 @@ public class SpiderController : MonoBehaviour
             if (!isDefeated)
             {
                 isDefeated = true;
+                animation.Play("Defeat");
                 rb.gravityScale = 1;
                 if (stopRotateWhenDefeated) rb.angularVelocity = 0;
                 rb.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
