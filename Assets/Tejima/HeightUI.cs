@@ -6,6 +6,7 @@ public class HeightUI : MonoBehaviour
     [SerializeField] Slider heightSlider;
     [SerializeField] float addValue = 0.1f;
     [SerializeField] bool isClimb = false;
+    [SerializeField] bool isDrop = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +21,20 @@ public class HeightUI : MonoBehaviour
             heightSlider.value += addValue;
             isClimb = false;
         }
+        if (isDrop == true)
+        {
+            heightSlider.value -= addValue;
+            isDrop = false;
+        }
     }
 
     public void Climb()
     {
         isClimb = true;
+    }
+
+    public void Drop()
+    {
+        isDrop = true;
     }
 }
