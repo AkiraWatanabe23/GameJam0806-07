@@ -543,8 +543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a549b22a07ac7884782b794b0938c5c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackDuration: 0
-  _attackInterval: 0
+  _attackDuration: 1
+  _attackInterval: 1
 --- !u!1001 &1553676222606335852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -704,7 +704,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 277995243154093413, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
       propertyPath: throwSpeed
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 277995243154093413, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
       propertyPath: takenDamageObjectTag

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KanabouController : MonoBehaviour
 {
+    [SerializeField] float rotationSpeed;
     Rigidbody2D rb;
 
     public void Throw(Transform transform, Transform target, float speed)
@@ -16,5 +17,6 @@ public class KanabouController : MonoBehaviour
         direction.Normalize();
 
         rb.velocity = direction * speed;
+        rb.angularVelocity = rotationSpeed;
     }
 }
