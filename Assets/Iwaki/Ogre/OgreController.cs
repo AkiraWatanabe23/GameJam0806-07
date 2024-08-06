@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OgreMove : MonoBehaviour
+public class OgreController : MonoBehaviour
 {
     [SerializeField] GameObject kanabou;
     [SerializeField] Transform target;

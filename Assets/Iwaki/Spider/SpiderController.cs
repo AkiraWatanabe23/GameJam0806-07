@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpiderMove : MonoBehaviour
+public class SpiderController : MonoBehaviour
 {
     [SerializeField] GameObject defeatEffect, effectOffset;
     [SerializeField] float rotationSpeed, amplitude;
     [SerializeField] string takenDamageObjectTag;
+    [SerializeField] bool stopRotateWhenDefeated;
     Rigidbody2D rb;
     bool isDefeated;
 
@@ -34,7 +35,9 @@ public class SpiderMove : MonoBehaviour
 
             if (!isDefeated)
             {
+                isDefeated = true;
                 rb.gravityScale = 1;
+                if (stopRotateWhenDefeated) rb.angularVelocity = 0;
                 rb.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
                 if (defeatEffect != null)
                 {
