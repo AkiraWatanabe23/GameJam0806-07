@@ -5,17 +5,18 @@ using UnityEngine.Events;
 
 public class SpiderController : MonoBehaviour
 {
-    [SerializeField] GameObject defeatEffect, effectOffset;
-    [SerializeField] float rotationSpeed, amplitude;
+    [SerializeField] GameObject defeatEffect, effectOffset, AttackObject;
+    [SerializeField] float rotationSpeed, amplitude, attackInterval;
     [SerializeField] string takenDamageObjectTag;
     [SerializeField] bool stopRotateWhenDefeated;
     Rigidbody2D rb;
-    bool isDefeated;
-    Animation animation;
+    bool isDefeated, canAttack;
+    Animator animator;
+    float t;
 
     private void Start()
     {
-        animation = GetComponent<Animation>();
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()
@@ -23,6 +24,27 @@ public class SpiderController : MonoBehaviour
         if (!isDefeated)
         {
             rb.angularVelocity = Mathf.Cos(Time.time * rotationSpeed) * amplitude;
+        }
+
+        if (canAttack)
+        {
+            t += Time.deltaTime;
+            if (t > attackInterval)
+            {
+                t = 0;
+                Attack();
+            }
+        }
+    }
+
+    void Attack()
+    {
+        var player = FindAnyObjectByType<PlayerMove>();
+        if (player != null)
+        {
+            var dir = player.transform.position - transform.position;
+            var attack = Instantiate(AttackObject);
+            attack.transform.position = transform.position;
         }
     }
 
@@ -39,7 +61,7 @@ public class SpiderController : MonoBehaviour
             if (!isDefeated)
             {
                 isDefeated = true;
-                animation.Play("Defeat");
+                animator.Play("Defeat");
                 rb.gravityScale = 1;
                 if (stopRotateWhenDefeated) rb.angularVelocity = 0;
                 rb.AddForce(Vector2.up * 5, ForceMode2D.Impulse);

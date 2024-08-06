@@ -40,8 +40,8 @@ public class OgreController : MonoBehaviour
         kanabou.Throw(transform, target, throwSpeed);
     }
 
-    public void ChangeThrowable(bool canThrow)
+    public void ChangeAttackable(bool canAttack)
     {
-        this.canThrow = canThrow;
+        this.canThrow = canAttack;
     }
 }

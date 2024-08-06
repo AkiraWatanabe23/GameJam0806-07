@@ -7,11 +7,11 @@ public class OgrePlayerDetection : MonoBehaviour
     [SerializeField] OgreController ogre;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<PlayerMove>() != null) ogre.ChangeThrowable(true);
+        if (collision.GetComponent<PlayerMove>() != null) ogre.ChangeAttackable(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<PlayerMove>() != null) ogre.ChangeThrowable(false);
+        if (collision.GetComponent<PlayerMove>() != null) ogre.ChangeAttackable(false);
     }
 }
