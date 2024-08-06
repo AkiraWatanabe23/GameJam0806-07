@@ -6,7 +6,7 @@ public class MoveCamera : MonoBehaviour
 {
     [SerializeField] int camerasHigh = 10;//ÉJÉÅÉâÇÃçÇÇ≥
     Transform myTransform;
-    Vector2 pos;
+    Vector3 pos;
     HeightUI heightUI;
     PlayerMove player;
     // Start is called before the first frame update
@@ -22,24 +22,15 @@ public class MoveCamera : MonoBehaviour
         pos = myTransform.position;
         if (transform.position.y + camerasHigh < player.gameObject.transform.position.y)
         {
-            UpCamera();
-            heightUI.Climb();
+            Debug.Log("Hit");
+            pos.y += camerasHigh * 2;
+            //heightUI.Climb();
         }
         else if (transform.position.y - camerasHigh > player.gameObject.transform.position.y)
         {
-            DownCamera();
-            heightUI.Drop();
+            pos.y -= camerasHigh * 2;
+            //heightUI.Drop();
         }
+        myTransform.position = pos;
     }
-
-    public void UpCamera()
-    {
-        pos.y += camerasHigh;
-    }
-
-    public void DownCamera()
-    {
-        pos.y -= camerasHigh;
-    }
-
 }
