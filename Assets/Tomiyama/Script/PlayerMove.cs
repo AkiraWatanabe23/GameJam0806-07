@@ -13,6 +13,7 @@ public class PlayerMove : MonoBehaviour
     float _defaultGravityScale = default;
     float _h = default;
     Rigidbody2D _rb = default;
+    Animator _anim;
     /// <summary>écÇËÉWÉÉÉìÉvâÒêî</summary>
     private int _jumpCount = 2;
     public int JumpCount { get => _jumpCount; set => _jumpCount = value; }
@@ -20,6 +21,7 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
         _defaultGravityScale = _rb.gravityScale;
     }
 
@@ -27,6 +29,7 @@ public class PlayerMove : MonoBehaviour
     {
         _h = Input.GetAxisRaw("Horizontal");
         _rb.velocity = new Vector2(_h * _speed, _rb.velocity.y);
+        _anim.SetBool("IsMoving", (_h != 0));
         if (_h != 0)
         {
             transform.localScale = new Vector3(-_h, 1, 1);
@@ -40,6 +43,7 @@ public class PlayerMove : MonoBehaviour
     public void Jump()
     {
         Debug.Log("Jump");
+        _anim.SetBool("IsGrounded", false);
         _rb.velocity = (_jumpCount == 2) ? new Vector2(_rb.velocity.x, _jumpPower) : new Vector2(_rb.velocity.x, _midJumpPower);
         _jumpCount--;
     }

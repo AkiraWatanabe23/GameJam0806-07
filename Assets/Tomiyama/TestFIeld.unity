@@ -261,6 +261,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 17773801282545378, guid: 926435b835887b3408be53dddf6cf6c8, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515230672268218454, guid: 926435b835887b3408be53dddf6cf6c8, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515230672268218454, guid: 926435b835887b3408be53dddf6cf6c8, type: 3}
+      propertyPath: m_Size.y
+      value: 1.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515230672268218454, guid: 926435b835887b3408be53dddf6cf6c8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7083971262301451182, guid: 926435b835887b3408be53dddf6cf6c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -321,6 +337,7 @@ GameObject:
   - component: {fileID: 1244308853}
   - component: {fileID: 1244308852}
   - component: {fileID: 1244308854}
+  - component: {fileID: 1244308855}
   m_Layer: 0
   m_Name: EnemyTest
   m_TagString: Untagged
@@ -440,6 +457,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1244308855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244308851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea0416c3312959a4d88c277a411d8df8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1325729292
 GameObject:
   m_ObjectHideFlags: 0
