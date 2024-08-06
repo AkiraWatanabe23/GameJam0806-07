@@ -16,6 +16,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     [SerializeField]
     private bool _isGoal = false;
 
+    private bool _isInitialized = false;
     private Transform _playerTransform = default;
 
     protected bool IsGoal
@@ -43,11 +44,18 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         _time = 0f;
 
         PlayerPrefs.DeleteAll();
-        AudioManager.Instance.PlayBGM(BGMType.InGame);
+        Fade.Instance.StartFadeIn(() =>
+        {
+            AudioManager.Instance.PlayBGM(BGMType.InGame);
+            _isInitialized = true;
+        });
+
     }
 
     private void Update()
     {
+        if (!_isInitialized) { return; }
+
         _time += Time.deltaTime;
         if (IsGoal)
         {

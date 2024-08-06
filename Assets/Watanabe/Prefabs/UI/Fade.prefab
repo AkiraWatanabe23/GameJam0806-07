@@ -125,4 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fadePanel: {fileID: 5256358566957198554}
-  _fadeTime: 3
+  _fadeTime: 1
