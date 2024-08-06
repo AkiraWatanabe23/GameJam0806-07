@@ -47,7 +47,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 _hp--;
                 Debug.Log($"Damage Taken (Current HP:{_hp}");
-                Instantiate(_damageParticle, collision.ClosestPoint(transform.position), Quaternion.identity);
+                Instantiate(_damageParticle, collision.ClosestPoint(transform.position), Quaternion.identity, transform);
                 _timer = _invincibleTime;
             }
         }
