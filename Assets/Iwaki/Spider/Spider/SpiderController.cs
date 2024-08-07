@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class SpiderController : MonoBehaviour, IEnemyAttackable
 {
-    [SerializeField] GameObject defeatEffect, effectOffset, attackObject;
-    [SerializeField] Transform attackOffset;
+    [SerializeField] GameObject defeatEffect, attackObject;
+    [SerializeField] Transform attackOffset, effectOffset;
     [SerializeField] float rotationSpeed, amplitude, attackInterval, attackSpeed;
     [SerializeField] bool stopRotateWhenDefeated, canAttack, playerDetectFromDistance;
     [SerializeField] float detectDistance, destroyTimeSinceDefeated;
@@ -48,7 +48,7 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
 
         if (!isDefeated && !isPaused)
         {
-            rb.angularVelocity = Mathf.Cos((Time.time - startTime) * rotationSpeed) * amplitude;
+            transform.localRotation = Quaternion.Euler(0, 0, Mathf.Cos((Time.time - startTime) * rotationSpeed) * amplitude / 2);
 
             if (playerDetectFromDistance)
             {
@@ -102,7 +102,14 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
                 if (defeatEffect != null)
                 {
                     var effect = Instantiate(defeatEffect);
-                    effect.transform.position = transform.position;
+                    if (effectOffset)
+                    {
+                        effect.transform.position = effectOffset.position;
+                    }
+                    else
+                    {
+                        effect.transform.position = collision.ClosestPoint(transform.position);
+                    }
                 }
                 Destroy(gameObject, 3);
             }

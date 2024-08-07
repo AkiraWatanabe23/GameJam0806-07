@@ -82,9 +82,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defeatEffect: {fileID: 9182604833507860623, guid: 5a7eae2d01f72d54f8209fdbbe671852, type: 3}
-  effectOffset: {fileID: 2263780265489983651}
   attackObject: {fileID: 6518692575453320665, guid: dcdb2ee37aaad9a4b811b7c964f397a2, type: 3}
   attackOffset: {fileID: 5629183139418122732}
+  effectOffset: {fileID: 0}
   rotationSpeed: 2
   amplitude: 80
   attackInterval: 2
@@ -94,6 +94,7 @@ MonoBehaviour:
   playerDetectFromDistance: 1
   detectDistance: 10
   destroyTimeSinceDefeated: 3
+  isPaused: 0
 --- !u!50 &6528987257114088684
 Rigidbody2D:
   serializedVersion: 4
@@ -167,7 +168,7 @@ Transform:
   m_GameObject: {fileID: 2263780265489983651}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalPosition: {x: 0.04, y: -5.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
