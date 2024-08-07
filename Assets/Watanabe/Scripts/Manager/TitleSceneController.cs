@@ -8,7 +8,14 @@ public class TitleSceneController : MonoBehaviour
 
     private void Start()
     {
-        if (_startButton != null) { _startButton.onClick.AddListener(() => SceneLoader.FadeLoad(SceneName.InGame)); }
+        if (_startButton != null)
+        {
+            _startButton.onClick.AddListener(() =>
+            {
+                AudioManager.Instance.PlaySE(SEType.Click);
+                SceneLoader.FadeLoad(SceneName.InGame);
+            });
+        }
 
         Fade.Instance.StartFadeIn(() => AudioManager.Instance.PlayBGM(BGMType.Title));
     }
