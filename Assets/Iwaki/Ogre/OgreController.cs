@@ -48,7 +48,6 @@ public class OgreController : MonoBehaviour, IEnemyAttackable
                 t = 0;
             }
 
-
             if (player.position.x > transform.position.x)
             {
                 if (playerWasLeft)
@@ -70,13 +69,14 @@ public class OgreController : MonoBehaviour, IEnemyAttackable
 
     void Throw()
     {
+        AudioManager.Instance.PlaySE(SEType.Throw);
         var obj = Instantiate(this.kanabou);
         var kanabou = obj.GetComponent<KanabouController>();
         kanabou.Throw(transform, target, throwSpeed);
         kanabou.GetComponent<AutoDestroyer>().SetTimer(kanabouDestroyTime);
     }
 
-    public void SetAttackable(bool canAttack)
+    public void SetCanAttack(bool canAttack)
     {
         this.canAttack = canAttack;
     }

@@ -18,13 +18,13 @@ public class PlayerDetection : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GetInterface();
-        if (collision.GetComponent<PlayerMove>() != null) attack.SetAttackable(true);
+        if (collision.GetComponent<PlayerMove>() != null) attack.SetCanAttack(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         GetInterface();
-        if (collision.GetComponent<PlayerMove>() != null) attack.SetAttackable(false);
+        if (collision.GetComponent<PlayerMove>() != null) attack.SetCanAttack(false);
     }
 
     void GetInterface()
