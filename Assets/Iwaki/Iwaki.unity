@@ -661,20 +661,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 277995243154093413, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
-      propertyPath: throwAnimationOffset
-      value: 0.3
+      propertyPath: throwSpeed
+      value: 9.3
       objectReference: {fileID: 0}
     - target: {fileID: 1326534036855724863, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
       propertyPath: m_Name
       value: Ogre
       objectReference: {fileID: 0}
+    - target: {fileID: 3164891829102454464, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 3164891829102454464, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6231011755684634410, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6231011755684634410, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.56
+      value: 3.07
       objectReference: {fileID: 0}
     - target: {fileID: 6231011755684634410, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.51
+      value: -1.22
       objectReference: {fileID: 0}
     - target: {fileID: 6231011755684634410, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
       propertyPath: m_LocalPosition.z
@@ -709,11 +721,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7222682261144234340, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f4e1c241365f4f44396ce0f0139fafff, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7222682261144234340, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
-      propertyPath: m_WasSpriteAssigned
+      propertyPath: m_SpriteSortPoint
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

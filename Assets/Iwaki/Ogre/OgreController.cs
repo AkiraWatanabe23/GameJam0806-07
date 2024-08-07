@@ -1,22 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Timeline;
 
 public class OgreController : MonoBehaviour, IEnemyAttackable
 {
     [SerializeField] GameObject kanabou;
     [SerializeField] Transform target;
-    [SerializeField] float interval, throwSpeed, throwAnimationOffset;
+    [SerializeField] float interval, throwSpeed;
     [SerializeField] bool canAttack;
-    Rigidbody2D rb;
+    [SerializeField] float kanabouDestroyTime;
     Animator animator;
     float t;
+    Transform player;
+    SpriteRenderer rend;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        player = FindAnyObjectByType<PlayerMove>().transform;
+        rend = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -25,15 +25,19 @@ public class OgreController : MonoBehaviour, IEnemyAttackable
         {
             t += Time.deltaTime;
 
-            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Throw") && t + throwAnimationOffset > interval)
-            {
-                animator.Play("Throw");
-            }
-
             if (t > interval)
             {
+                animator.Play("Throw");
                 t = 0;
-                Throw();
+            }
+
+            if (player.position.x > transform.position.x)
+            {
+                transform.localScale = new Vector2(-1, 1);
+            }
+            else
+            {
+                transform.localScale = new Vector2(1, 1);
             }
         }
     }
@@ -43,7 +47,7 @@ public class OgreController : MonoBehaviour, IEnemyAttackable
         var obj = Instantiate(this.kanabou);
         var kanabou = obj.GetComponent<KanabouController>();
         kanabou.Throw(transform, target, throwSpeed);
-        Destroy(obj, 5);
+        Destroy(obj, kanabouDestroyTime);
     }
 
     public void SetAttackable(bool canAttack)
