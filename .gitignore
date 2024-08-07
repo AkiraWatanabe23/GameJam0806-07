@@ -70,3 +70,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/Iwaki/DefeatEffect.prefab
+Assets/Iwaki/DefeatEffect.prefab.meta
+Assets/Iwaki/Spider/Web/Test/WebSliceEffect.prefab
+Assets/Iwaki/Spider/Web/Test/WebSliceEffect.prefab.meta
