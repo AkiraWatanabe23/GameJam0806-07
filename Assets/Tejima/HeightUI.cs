@@ -26,7 +26,7 @@ public class HeightUI : MonoBehaviour
             }
             else
             {
-                heightSlider.value += addValue;
+                heightSlider.value -= addValue;
                 isClimb = false;
             }
         }
@@ -39,7 +39,7 @@ public class HeightUI : MonoBehaviour
             }
             else
             {
-                heightSlider.value -= addValue;
+                heightSlider.value += addValue;
                 isDrop = false;
             }
         }
