@@ -22,9 +22,12 @@ public class PlayerAttack : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && _canAttack)
+        if (!_playerMove.IsPaused)
         {
-            StartCoroutine(Attack());
+            if (Input.GetMouseButtonDown(0) && _canAttack)
+            {
+                StartCoroutine(Attack());
+            }
         }
     }
     IEnumerator Attack()
