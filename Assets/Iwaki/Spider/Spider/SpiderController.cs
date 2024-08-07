@@ -75,8 +75,8 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
             var dir = (player.transform.position - attackOffset.position).normalized;
             var attack = Instantiate(attackObject);
             attack.transform.position = attackOffset.position;
-            attack.transform.up = dir;
             attack.GetComponent<Rigidbody2D>().velocity = dir * attackSpeed;
+            attack.GetComponent<Rigidbody2D>().angularVelocity = 10;
             attack.GetComponent<AutoDestroyer>().SetTimer(destroyTimeSinceDefeated);
         }
     }
