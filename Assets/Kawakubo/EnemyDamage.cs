@@ -13,7 +13,7 @@ public class EnemyDamage : MonoBehaviour
             AudioManager.Instance.PlaySE(SEType.EnemyDead);
             if(_particles != null)
             {
-                _particles.Play();
+                Instantiate(_particles,this.gameObject.transform.position,Quaternion.identity);
             }
             Destroy(this.gameObject);
         }
