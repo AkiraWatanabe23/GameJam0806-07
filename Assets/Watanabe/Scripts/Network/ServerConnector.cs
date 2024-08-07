@@ -86,11 +86,11 @@ namespace Network
         private async void RegisterViewActions()
         {
             var score = PlayerPrefs.GetInt("Score");
-            _ = await PutRequest("SetScore", _userData.ID, score.ToString());
+            _ = await PutRequest("SetScore", _userData.ID, (score * 10).ToString());
 
-            _connectorView.OnUpdateScore((score / 10f).ToString("F1"));
+            _connectorView.OnUpdateScore(score);
             //1～5位のランキングを取得
-            _connectorView.OnUpdateRanking(await PutRequest("GetRanking", _userData.ID, "1", "5"));
+            _connectorView.OnUpdateRanking(await PutRequest("GetRanking", _userData.ID, "1", "5", "true"));
         }
 
         private async Task<bool> AccessServer()

@@ -56,7 +56,7 @@ public class RankingController : MonoBehaviour
                 for (int i = 0; i < 5 - _highScores.Count; i++) { _highScores.Add(0); }
             }
             _highScores.Sort();
-            _rankingView.OnUpdateScore((score / 10f).ToString("F1"));
+            _rankingView.OnUpdateScore(score);
             _rankingView.OnUpdateRanking(string.Join(',', _highScores));
         }
     }

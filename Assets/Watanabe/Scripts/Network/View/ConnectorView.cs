@@ -10,7 +10,25 @@ namespace Network
         [SerializeField]
         private Text[] _rankingTexts = default;
 
-        public void OnUpdateScore(string score) => _scoreText.text = score;
+        private Tweening _tweening = default;
+
+        private void Start()
+        {
+            _tweening = new();
+            _tweening.Initialize();
+        }
+
+        private void Update()
+        {
+            if (_tweening == null) { return; }
+
+            _tweening.OnUpdate();
+        }
+
+        public void OnUpdateScore(float score)
+        {
+            _tweening.RegisterTween(Tweening.ValueCount(0f, score, 1f, _scoreText));
+        }
 
         public void OnUpdateRanking(string ranking)
         {
