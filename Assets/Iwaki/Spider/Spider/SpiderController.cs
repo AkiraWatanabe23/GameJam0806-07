@@ -52,7 +52,7 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
 
             if (playerDetectFromDistance)
             {
-                SetAttackable(detectDistance * detectDistance > Vector2.SqrMagnitude(player.position - attackOffset.position));
+                SetCanAttack(detectDistance * detectDistance > Vector2.SqrMagnitude(player.position - attackOffset.position));
             }
 
             if (canAttack)
@@ -85,7 +85,6 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
     {
         if (collision.CompareTag("Weapon"))
         {
-            animator.Play("Defeat");
             var colliders = GetComponentsInChildren<Collider2D>();
             foreach (var collider in colliders)
             {
@@ -95,7 +94,8 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
             if (!isDefeated)
             {
                 isDefeated = true;
-                //animator.Play("Defeat");
+                AudioManager.Instance.PlaySE(SEType.EnemyDead);
+                animator.Play("Defeat");
                 rb.gravityScale = 1;
                 if (stopRotateWhenDefeated) rb.angularVelocity = 0;
                 rb.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
@@ -109,7 +109,7 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
         }
     }
 
-    public void SetAttackable(bool canAttack)
+    public void SetCanAttack(bool canAttack)
     {
         this.canAttack = canAttack;
     }
@@ -117,5 +117,5 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
 
 public interface IEnemyAttackable
 {
-    void SetAttackable(bool canAttack);
+    void SetCanAttack(bool canAttack);
 }
