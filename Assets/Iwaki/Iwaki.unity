@@ -763,6 +763,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4865865899764920855, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
+      propertyPath: m_Size.x
+      value: 1.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865865899764920855, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
+      propertyPath: m_Size.y
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865865899764920855, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 1.04
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -779,6 +791,18 @@ PrefabInstance:
     - target: {fileID: 1326534036855724863, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
       propertyPath: m_Name
       value: Ogre
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141240314050972151, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
+      propertyPath: m_Size.x
+      value: 1.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141240314050972151, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
+      propertyPath: m_Size.y
+      value: 3.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141240314050972151, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.16
       objectReference: {fileID: 0}
     - target: {fileID: 6231011755684634410, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
       propertyPath: m_LocalPosition.x
