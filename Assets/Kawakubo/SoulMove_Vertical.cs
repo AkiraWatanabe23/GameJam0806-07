@@ -5,7 +5,6 @@ using UnityEngine;
 public class SoulMove_Vertical : MonoBehaviour
 {
     private float x = 0;
-    private float z = 0;
     private float theta = 0;
     public float distance = 1f;
     public float speed = 1f;
@@ -20,9 +19,8 @@ public class SoulMove_Vertical : MonoBehaviour
     void Update()
     {
         x = Mathf.Sin(theta) * distance;
-        z = Mathf.Cos(theta) * distance;
 
-        this.transform.position = new Vector3(0, x, z) + centar;
+        this.transform.position = new Vector3(0, x, 0) + centar;
         theta += (speed * Mathf.PI / 360);
     }
 }
