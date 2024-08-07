@@ -660,6 +660,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 277995243154093413, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
+      propertyPath: throwAnimationOffset
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1326534036855724863, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
       propertyPath: m_Name
       value: Ogre
@@ -703,6 +707,14 @@ PrefabInstance:
     - target: {fileID: 6231011755684634410, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222682261144234340, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f4e1c241365f4f44396ce0f0139fafff, type: 3}
+    - target: {fileID: 7222682261144234340, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
