@@ -44,7 +44,7 @@ public class PlayerAttack : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent<EnemyDamage>(out _))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             _playerMove.JumpCount = 2;
             _playerMove.JumpWhenAttackedAtEnemy(_jumpPowerWhenAttackedToEnemy);
