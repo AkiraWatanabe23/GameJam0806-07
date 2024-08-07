@@ -93,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackDuration: 0.2
   _attackInterval: 0.6
-  _jumpPowerWhenAttackedToEnemy: 0
+  _jumpPowerWhenAttackedToEnemy: 10
 --- !u!212 &6389382838200250053
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -314,7 +314,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 60.469994, y: 60.469994}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -333,9 +333,7 @@ GameObject:
   - component: {fileID: 4267112727830986849}
   - component: {fileID: 7785049172843290641}
   - component: {fileID: 1207810596609371677}
-  - component: {fileID: 8220965420837774918}
   - component: {fileID: 1908468398669389903}
-  - component: {fileID: 724061032219362394}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -358,6 +356,7 @@ Transform:
   m_Children:
   - {fileID: 2133318205777330000}
   - {fileID: 6041648936905950415}
+  - {fileID: 6525722419222330611}
   - {fileID: 2465298237468183535}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -407,7 +406,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -454,7 +453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _jumpPower: 9
   _midJumpPower: 6
-  _speed: 10
+  _speed: 7
   _fallingGravityScale: 1.8
   _jumpEffect: {fileID: 5156756622250457942, guid: 83e1045ea1918174baab1546aa943475, type: 3}
 --- !u!95 &1207810596609371677
@@ -478,22 +477,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8220965420837774918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7162745774449945787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feeecd4c784bed044a72987ecdfffb81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damageParticle: {fileID: 7875769631181940416, guid: a4369011c1aab784883352986bf1a11d, type: 3}
-  _invincibleTime: 2
-  _maxHp: 5
-  hitPointManager: {fileID: 0}
 --- !u!61 &1908468398669389903
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -531,7 +514,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 5.12, y: 5.12}
-    newSize: {x: 1, y: 2}
+    newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -539,13 +522,46 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.23, y: 4.29}
   m_EdgeRadius: 0
---- !u!61 &724061032219362394
+--- !u!1 &8604431100716684051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6525722419222330611}
+  - component: {fileID: 4309081460843368246}
+  - component: {fileID: 1456176076933070008}
+  m_Layer: 0
+  m_Name: PlayerHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6525722419222330611
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8604431100716684051}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7083971262301451182}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &4309081460843368246
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7162745774449945787}
+  m_GameObject: {fileID: 8604431100716684051}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -574,13 +590,29 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.23, y: 4.29}
+  m_Size: {x: 1.24, y: 4.31}
   m_EdgeRadius: 0
+--- !u!114 &1456176076933070008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8604431100716684051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feeecd4c784bed044a72987ecdfffb81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageParticle: {fileID: 7875769631181940416, guid: a4369011c1aab784883352986bf1a11d, type: 3}
+  _invincibleTime: 2
+  _maxHp: 5
+  hitPointManager: {fileID: 0}
