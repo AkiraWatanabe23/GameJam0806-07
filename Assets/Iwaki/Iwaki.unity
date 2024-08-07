@@ -664,6 +664,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spider
       objectReference: {fileID: 0}
+    - target: {fileID: 2697970930093299410, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
+      propertyPath: defeatEffect
+      value: 
+      objectReference: {fileID: 7875769631181940416, guid: a4369011c1aab784883352986bf1a11d, type: 3}
     - target: {fileID: 4156321169012661961, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.33

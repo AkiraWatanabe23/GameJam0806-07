@@ -5,6 +5,15 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour
 {
     [SerializeField] ParticleSystem _particles;
+    public Transform particlePosition;
+
+    private void Start()
+    {
+        if(particlePosition == null)
+        {
+            particlePosition = this.gameObject.transform;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var Attacker = collision.GetComponent<PlayerAttack>();
@@ -13,7 +22,7 @@ public class EnemyDamage : MonoBehaviour
             AudioManager.Instance.PlaySE(SEType.EnemyDead);
             if(_particles != null)
             {
-                Instantiate(_particles,this.gameObject.transform.position,Quaternion.identity);
+                Instantiate(_particles,particlePosition.position,Quaternion.identity);
             }
             Destroy(this.gameObject);
         }

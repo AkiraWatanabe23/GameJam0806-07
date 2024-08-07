@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea0416c3312959a4d88c277a411d8df8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particles: {fileID: 1477027406200675952, guid: b9f880d5f4d52ff4785f4e365f4a7c59, type: 3}
+  _particles: {fileID: 0}
 --- !u!114 &-1980488572596013156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,3 +188,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9469cd11d8073439edc7d374ff2908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 0
