@@ -72,10 +72,12 @@ public class PlayerMove : MonoBehaviour
             }
         }
     }
+    public void PlayStepSE() => AudioManager.Instance.PlaySE(SEType.Move);
     void Jump()
     {
         Debug.Log("Jump");
         _anim.SetBool("IsGrounded", false);
+        AudioManager.Instance.PlaySE(SEType.Jump);
         _rb.velocity = (_jumpCount == 2) ? new Vector2(_rb.velocity.x, _jumpPower) : new Vector2(_rb.velocity.x, _midJumpPower);
         _jumpCount--;
         Instantiate(_jumpEffect,transform);
@@ -84,6 +86,7 @@ public class PlayerMove : MonoBehaviour
     {
         Debug.Log("Hit by enemy Jump");
         _anim.SetBool("IsGrounded", false);
+        AudioManager.Instance.PlaySE(SEType.Jump);
         _rb.velocity = new Vector2(_rb.velocity.x, jumpPower);
         _jumpCount--;
         Instantiate(_jumpEffect, transform);

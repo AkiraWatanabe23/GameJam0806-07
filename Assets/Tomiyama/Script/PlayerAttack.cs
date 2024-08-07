@@ -33,7 +33,8 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator Attack()
     {
         Debug.Log("Attack");
-        _anim.SetTrigger("Attack");
+        _anim.SetTrigger("Attack"); 
+        AudioManager.Instance.PlaySE(SEType.Attack);
         _canAttack = false;
         _collider.enabled = true;
         yield return new WaitForSeconds(_attackDuration);

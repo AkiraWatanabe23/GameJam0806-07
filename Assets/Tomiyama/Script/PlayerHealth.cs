@@ -40,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy") && _timer <= 0)
         {
             _anim.SetBool("IsInvincible", true);
+            AudioManager.Instance.PlaySE(SEType.Damaged);
             if (_hp - 1 == 0)
             {
                 GameManager.Instance.PlayerDead();
