@@ -46,13 +46,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bgmClips:
   - _bgmType: 1
-    _bgmClip: {fileID: 8300000, guid: 3461fe1a48ee4864280cd7e21094b277, type: 3}
+    _bgmClip: {fileID: 8300000, guid: d7f86b8a86c1ee449b7002258c6303c0, type: 3}
   - _bgmType: 2
     _bgmClip: {fileID: 8300000, guid: 9fc5de6025042154e936a30e0c4ac85d, type: 3}
   - _bgmType: 3
-    _bgmClip: {fileID: 8300000, guid: ec08a63c0e397f2419b387bac1a69508, type: 3}
+    _bgmClip: {fileID: 8300000, guid: f51f553945fbfc14f8688ca63e6b7bc2, type: 3}
   - _bgmType: 4
-    _bgmClip: {fileID: 8300000, guid: cdd7e0347fc034f48a11431f9bdeaf6e, type: 3}
+    _bgmClip: {fileID: 8300000, guid: 858b4f8ea07c01a42a532797376d6be1, type: 3}
   _seClips:
   - _seType: 1
     _seClip: {fileID: 8300000, guid: dc77fa6caae68c14c8004b9d11dc4563, type: 3}
