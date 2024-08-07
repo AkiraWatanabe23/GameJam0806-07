@@ -666,14 +666,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spider
       objectReference: {fileID: 0}
-    - target: {fileID: 2697970930093299410, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
-      propertyPath: attackObject
-      value: 
-      objectReference: {fileID: 8571133032532625881, guid: 628ed9c5355150042afe5906e1d57455, type: 3}
-    - target: {fileID: 2697970930093299410, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
-      propertyPath: defeatEffect
-      value: 
-      objectReference: {fileID: 7875769631181940416, guid: e923c1e1ea413d048bbfcbdc29434d14, type: 3}
     - target: {fileID: 4156321169012661961, guid: 6f95c5c9ed2cf4949a7174e42d3783b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.13
@@ -727,10 +719,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 667095939374097022, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
-      propertyPath: _particles
-      value: 
-      objectReference: {fileID: 1477027406200675952, guid: e923c1e1ea413d048bbfcbdc29434d14, type: 3}
     - target: {fileID: 1326534036855724863, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
       propertyPath: m_Name
       value: Ogre

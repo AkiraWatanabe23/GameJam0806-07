@@ -81,8 +81,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e694943c796d74eae2023500b7bf56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defeatEffect: {fileID: 9182604833507860623, guid: 5a7eae2d01f72d54f8209fdbbe671852, type: 3}
-  attackObject: {fileID: 6518692575453320665, guid: dcdb2ee37aaad9a4b811b7c964f397a2, type: 3}
+  defeatEffect: {fileID: 7875769631181940416, guid: e923c1e1ea413d048bbfcbdc29434d14, type: 3}
+  attackObject: {fileID: 8571133032532625881, guid: 628ed9c5355150042afe5906e1d57455, type: 3}
   attackOffset: {fileID: 5629183139418122732}
   effectOffset: {fileID: 0}
   rotationSpeed: 2

@@ -7,6 +7,6 @@ public class WebController : MonoBehaviour
     void Start()
     {
         transform.up = -(FindAnyObjectByType<PlayerMove>().transform.position - transform.position);
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, 18.77f));
+        //transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, 18.77f));
     }
 }
