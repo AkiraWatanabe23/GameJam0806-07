@@ -13,8 +13,10 @@ namespace Constants
         public static readonly Dictionary<SceneName, string> Scenes = new()
         {
             { SceneName.Title, "TitleScene" },
-            { SceneName.InGame, "GameScene" },
-            { SceneName.Result, "ResultScene" }
+            { SceneName.Stage1, "Stage1" },
+            { SceneName.Stage2, "Stage2" },
+            { SceneName.ClearResult, "ClearResultScene" },
+            { SceneName.FailedResult, "FailedResultScene" }
         };
 
         /// <summary> 指定したシーンのシーン名を取得する </summary>
@@ -48,6 +50,8 @@ namespace Constants
 public enum SceneName
 {
     Title,
-    InGame,
-    Result
+    Stage1,
+    Stage2,
+    ClearResult,
+    FailedResult,
 }

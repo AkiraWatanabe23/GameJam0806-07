@@ -84,7 +84,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             PlayerPrefs.SetString("ClearData", "Clear");
             PlayerPrefs.SetInt("Score", (int)(PlayTime * 10));
 
-            SceneLoader.FadeLoad(SceneName.Result);
+            SceneLoader.FadeLoad(SceneName.ClearResult);
         }
     }
 
@@ -93,6 +93,6 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         PlayerPrefs.SetString("ClearData", "Failed");
         PlayerPrefs.SetInt("Score", 0);
-        SceneLoader.FadeLoad(SceneName.Result);
+        SceneLoader.FadeLoad(SceneName.FailedResult);
     }
 }

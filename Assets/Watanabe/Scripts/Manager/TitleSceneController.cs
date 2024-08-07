@@ -5,17 +5,27 @@ public class TitleSceneController : MonoBehaviour
 {
     [SerializeField]
     private Button _startButton = default;
+    [SerializeField]
+    private Button _easyModeButton = default;
+    [SerializeField]
+    private Button _hardModeButton = default;
 
     private void Start()
     {
-        if (_startButton != null)
+        _startButton.onClick.AddListener(() =>
         {
-            _startButton.onClick.AddListener(() =>
-            {
-                AudioManager.Instance.PlaySE(SEType.Click);
-                SceneLoader.FadeLoad(SceneName.InGame);
-            });
-        }
+            AudioManager.Instance.PlaySE(SEType.Click);
+        });
+        _easyModeButton.onClick.AddListener(() =>
+        {
+            AudioManager.Instance.PlaySE(SEType.Click);
+            SceneLoader.FadeLoad(SceneName.Stage1);
+        });
+        _hardModeButton.onClick.AddListener(() =>
+        {
+            AudioManager.Instance.PlaySE(SEType.Click);
+            SceneLoader.FadeLoad(SceneName.Stage2);
+        });
 
         Fade.Instance.StartFadeIn(() => AudioManager.Instance.PlayBGM(BGMType.Title));
     }
