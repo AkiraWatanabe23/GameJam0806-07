@@ -8,6 +8,7 @@ public class SoulMove_Vertical : MonoBehaviour
     private float theta = 0;
     public float distance = 1f;
     public float speed = 1f;
+    private bool Pause = false;
     private Vector3 centar = Vector3.zero;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,18 @@ public class SoulMove_Vertical : MonoBehaviour
         x = Mathf.Sin(theta) * distance;
 
         this.transform.position = new Vector3(0, x, 0) + centar;
-        theta += (speed * Mathf.PI / 360);
+        if(!Pause)
+        {
+            theta += (speed * Mathf.PI / 360);
+        }
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            OnPause();
+        }
+    }
+
+    public void OnPause()
+    {
+        Pause = !Pause;
     }
 }
