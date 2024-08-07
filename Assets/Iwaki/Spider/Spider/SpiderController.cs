@@ -48,7 +48,7 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
 
         if (!isDefeated && !isPaused)
         {
-            transform.localRotation = Quaternion.Euler(0, 0, Mathf.Cos((Time.time - startTime) * rotationSpeed) * amplitude / 2);
+            transform.localRotation = Quaternion.Euler(0, 0, Mathf.Sin((Time.time - startTime) * rotationSpeed) * amplitude / 2);
 
             if (playerDetectFromDistance)
             {
