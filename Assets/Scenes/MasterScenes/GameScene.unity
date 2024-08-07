@@ -272,6 +272,7 @@ MonoBehaviour:
   _player: {fileID: 0}
   _goal: {fileID: 0}
   _time: 0
+  _playTimeText: {fileID: 0}
   _debugMode: 0
   _isGoal: 0
 --- !u!1001 &773896240

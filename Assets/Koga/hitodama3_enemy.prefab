@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 2
-  speed: 1
+  speed: 0.3
 --- !u!114 &7994459560814202289
 MonoBehaviour:
   m_ObjectHideFlags: 0
