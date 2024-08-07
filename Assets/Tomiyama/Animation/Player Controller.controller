@@ -219,7 +219,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: MoveY
-    m_EventTreshold: -0.2
+    m_EventTreshold: -3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -9200509798739389892}
   m_Solo: 0
@@ -407,7 +407,7 @@ AnimatorController:
     m_Behaviours: []
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
-    m_DefaultWeight: 0
+    m_DefaultWeight: 1
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
@@ -419,7 +419,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Move
-  m_Speed: 1
+  m_Speed: 0.175
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5439808864902115744}
@@ -494,7 +494,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: MoveY
-    m_EventTreshold: -0.2
+    m_EventTreshold: -3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -9200509798739389892}
   m_Solo: 0
