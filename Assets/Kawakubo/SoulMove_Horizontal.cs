@@ -24,6 +24,7 @@ public class SoulMove_Horizontal : MonoBehaviour
         this.transform.position = new Vector3(x, 0, 0) + centar;
         if(!Pause)
         {
+            AudioManager.Instance.PlaySE(SEType.Soul);
             theta += (speed * Mathf.PI / 360);
         }
         if (Input.GetKeyDown(KeyCode.Tab))

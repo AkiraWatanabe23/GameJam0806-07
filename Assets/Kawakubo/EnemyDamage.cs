@@ -10,6 +10,7 @@ public class EnemyDamage : MonoBehaviour
         var Attacker = collision.GetComponent<PlayerAttack>();
         if (Attacker != null && !Attacker.CanAttack && collision.gameObject.tag == "Weapon")
         {
+            AudioManager.Instance.PlaySE(SEType.EnemyDead);
             if(_particles != null)
             {
                 _particles.Play();

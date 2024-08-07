@@ -26,6 +26,7 @@ public class SoulMove_Circle : MonoBehaviour
         this.transform.position = new Vector3(x, z, 0) + centar;
         if(!Pause)
         {
+            AudioManager.Instance.PlaySE(SEType.Soul);
             theta += (speed * Mathf.PI / 360);
         }
         if (Input.GetKeyDown(KeyCode.Tab))
