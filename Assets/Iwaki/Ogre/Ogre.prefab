@@ -53,9 +53,9 @@ MonoBehaviour:
   kanabou: {fileID: 8711506028805827294, guid: 985c47aefc039ca429bfa4cff35279d8, type: 3}
   target: {fileID: 3164891829102454464}
   interval: 2
-  throwSpeed: 5
-  throwAnimationOffset: 0.3
+  throwSpeed: 9.3
   canAttack: 1
+  kanabouDestroyTime: 2
 --- !u!114 &667095939374097022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,7 +120,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!70 &5141240314050972151
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ Transform:
   m_GameObject: {fileID: 7759523034600842407}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.39, y: 1.56, z: 0}
+  m_LocalPosition: {x: -4.88, y: 6.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -541,6 +541,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7321376617201097768, guid: 59dae4dc4a0e82946bb032d1ff28951c, type: 3}
+      propertyPath: m_Size.x
+      value: 12.628286
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321376617201097768, guid: 59dae4dc4a0e82946bb032d1ff28951c, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.314143
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -660,25 +668,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 277995243154093413, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
-      propertyPath: throwSpeed
-      value: 9.3
-      objectReference: {fileID: 0}
     - target: {fileID: 1326534036855724863, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
       propertyPath: m_Name
       value: Ogre
-      objectReference: {fileID: 0}
-    - target: {fileID: 3164891829102454464, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 3164891829102454464, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 6231011755684634410, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6231011755684634410, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
       propertyPath: m_LocalPosition.x
@@ -719,14 +711,6 @@ PrefabInstance:
     - target: {fileID: 6231011755684634410, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7222682261144234340, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7222682261144234340, guid: 06c3f58e736ca064c9750f8a2b0a9131, type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
