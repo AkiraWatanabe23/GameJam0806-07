@@ -1,34 +1,47 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MoveCamera : MonoBehaviour
 {
-    [SerializeField] float camerasHigh = 5.4f;//�J�����̍���
-    Transform myTransform;
-    Vector3 pos;
-    [SerializeField]HeightUI heightUI;
-    PlayerMove player;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private Transform _player = default;
+    [SerializeField]
+    private HeightUI _heightUI = default;
+
+    /// <summary> 現在のステージ上でのカメラの高さ </summary>
+    private int _currentHeightPoint = 0;
+
+    private const float CameraMoveSpace = 10.8f;
+
+    private void Start()
     {
-        player = GameObject.FindObjectOfType<PlayerMove>();
-        myTransform = this.transform;
+        if (_player == null) { _player = FindObjectOfType<PlayerMove>().gameObject.transform; }
+
+        var position = transform.position;
+        position.y = CameraMoveSpace * _currentHeightPoint;
+
+        transform.position = position;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        pos = myTransform.position;
-        if (transform.position.y + camerasHigh < player.gameObject.transform.position.y)
+        //次の位置の半分を境にしてどれくらい位置が変化したか
+        if (_player.position.y >= (CameraMoveSpace * (_currentHeightPoint + 1)) - 5.4f)
         {
-            Debug.Log("Hit");
-            pos.y += camerasHigh * 2;
-            heightUI.Climb();
+            _currentHeightPoint++;
+            var position = transform.position;
+            position.y = CameraMoveSpace * _currentHeightPoint;
+
+            transform.position = position;
+            _heightUI.Climb();
         }
-        else if (transform.position.y - camerasHigh > player.gameObject.transform.position.y)
+        else if (_player.position.y <= (CameraMoveSpace * _currentHeightPoint) - 5.4f && _currentHeightPoint > 0)
         {
-            pos.y -= camerasHigh * 2;
-            heightUI.Drop();
+            _currentHeightPoint--;
+            var position = transform.position;
+            position.y = CameraMoveSpace * _currentHeightPoint;
+
+            transform.position = position;
+            _heightUI.Drop();
         }
-        myTransform.position = pos;
     }
 }
