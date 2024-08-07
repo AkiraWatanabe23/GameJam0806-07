@@ -54,7 +54,7 @@ MonoBehaviour:
   target: {fileID: 3164891829102454464}
   interval: 2
   throwSpeed: 5
-  throwAnimationOffset: 0.25
+  throwAnimationOffset: 0.3
   canAttack: 1
 --- !u!114 &667095939374097022
 MonoBehaviour:
