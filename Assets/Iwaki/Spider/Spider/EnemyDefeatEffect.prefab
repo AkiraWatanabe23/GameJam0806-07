@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1477027406200675952}
   - component: {fileID: 5868788627566046382}
   m_Layer: 0
-  m_Name: WebSliceEffect
+  m_Name: EnemyDefeatEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7875769631181940416}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.8328371, y: 0.16568428, z: 0.05009862}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -664,7 +664,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 0
+    type: 10
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -749,7 +749,7 @@ ParticleSystem:
     m_TextureBilinearFiltering: 0
     randomDirectionAmount: 0
     sphericalDirectionAmount: 0
-    randomPositionAmount: 0.3
+    randomPositionAmount: 0
     radius:
       value: 0.1
       mode: 0
@@ -980,7 +980,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 30
+        scalar: 20
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -2090,13 +2090,13 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.65405464
-          inSlope: -1.4515457
-          outSlope: -1.4515457
+          value: 1
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
-          outWeight: 0.13778482
+          outWeight: 0
         - serializedVersion: 3
           time: 1
           value: 0
@@ -3998,7 +3998,7 @@ ParticleSystem:
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.06
+      scalar: 0.6
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4084,9 +4084,9 @@ ParticleSystem:
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 0
-        atime1: 52197
-        atime2: 47879
+        atime0: 19661
+        atime1: 65535
+        atime2: 0
         atime3: 0
         atime4: 0
         atime5: 0
@@ -4195,9 +4195,9 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 0.7660377, g: 0.7660377, b: 0.7660377, a: 1}
-        key2: {r: 1, g: 0.2352941, b: 0.7874512, a: 0}
+        key0: {r: 0.9882353, g: 0.35686275, b: 0.771947, a: 1}
+        key1: {r: 0.60145813, g: 0.2352941, b: 1, a: 1}
+        key2: {r: 1, g: 0.6901961, b: 0.6901961, a: 0}
         key3: {r: 1, g: 0.6901961, b: 0.6901961, a: 0}
         key4: {r: 1, g: 0.6901961, b: 0.6901961, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
