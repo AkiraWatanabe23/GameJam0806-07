@@ -14,6 +14,10 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     [Header("UI")]
     [SerializeField]
     private Text _playTimeText = default;
+    [SerializeField]
+    private Slider _bgmSlider = default;
+    [SerializeField]
+    private Slider _seSlider = default;
 
     [Header("Debug")]
     [SerializeField]
@@ -56,6 +60,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         }
         _playerTransform = _player.transform;
         PlayTime = 0f;
+
+        _bgmSlider.onValueChanged.AddListener(AudioManager.Instance.VolumeSettingBGM);
+        _seSlider.onValueChanged.AddListener(AudioManager.Instance.VolumeSettingSE);
 
         PlayerPrefs.DeleteAll();
         Fade.Instance.StartFadeIn(() =>
