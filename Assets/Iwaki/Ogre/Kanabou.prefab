@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1117537342693630203}
   - component: {fileID: -5470647116852823368}
   - component: {fileID: -5339183350638138706}
+  - component: {fileID: -2186552469412363585}
+  - component: {fileID: -232377339159966978}
   m_Layer: 0
   m_Name: Kanabou
   m_TagString: Enemy
@@ -176,3 +178,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _particles: {fileID: 0}
+--- !u!114 &-2186552469412363585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8711506028805827294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb9469cd11d8073439edc7d374ff2908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-232377339159966978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8711506028805827294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c834dc5db5453d44893b8ac4733b9091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDestroy: 0

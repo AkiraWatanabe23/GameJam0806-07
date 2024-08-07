@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7083455203861429332}
   - component: {fileID: 6723708931567443161}
   - component: {fileID: 7183223434015361952}
+  - component: {fileID: -1980488572596013156}
+  - component: {fileID: -8370749590877975398}
   m_Layer: 0
   m_Name: AttackWeb
   m_TagString: Enemy
@@ -162,3 +164,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _particles: {fileID: 0}
+--- !u!114 &-1980488572596013156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6518692575453320665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c834dc5db5453d44893b8ac4733b9091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8370749590877975398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6518692575453320665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb9469cd11d8073439edc7d374ff2908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 0

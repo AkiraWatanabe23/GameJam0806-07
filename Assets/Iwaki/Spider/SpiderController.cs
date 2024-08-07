@@ -9,23 +9,44 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
     [SerializeField] Transform attackOffset;
     [SerializeField] float rotationSpeed, amplitude, attackInterval, attackSpeed;
     [SerializeField] bool stopRotateWhenDefeated, canAttack, playerDetectFromDistance;
-    [SerializeField] float detectDistance;
+    [SerializeField] float detectDistance, destroyTimeSinceDefeated;
     Rigidbody2D rb;
     bool isDefeated;
-    //Animator animator;
-    float attackTime, startTime;
+    Animator animator;
+    float t, startTime;
     Transform player;
+
+    [SerializeField] bool isPaused;
+    float pausedTime;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         startTime = Time.time;
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         player = FindAnyObjectByType<PlayerMove>().transform;
     }
     void Update()
     {
-        if (!isDefeated)
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (!isPaused)
+            {
+                pausedTime = Time.time;
+                rb.simulated = false;
+                animator.speed = 0;
+                isPaused = true;
+            }
+            else
+            {
+                startTime += Time.time - pausedTime;
+                rb.simulated = true;
+                animator.speed = 1;
+                isPaused = false;
+            }
+        }
+
+        if (!isDefeated && !isPaused)
         {
             rb.angularVelocity = Mathf.Cos((Time.time - startTime) * rotationSpeed) * amplitude;
 
@@ -36,17 +57,17 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
 
             if (canAttack)
             {
-                attackTime += Time.deltaTime;
-                if (attackTime > attackInterval)
+                t += Time.deltaTime;
+                if (t > attackInterval)
                 {
-                    attackTime = 0;
-                    Attack();
+                    t = 0;
+                    animator.Play("ShootWeb");
                 }
             }
         }
     }
 
-    void Attack()
+    void ShootWeb()
     {
         var player = FindAnyObjectByType<PlayerMove>();
         if (player != null)
@@ -56,7 +77,7 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
             attack.transform.position = attackOffset.position;
             attack.transform.up = dir;
             attack.GetComponent<Rigidbody2D>().velocity = dir * attackSpeed;
-            Destroy(attack, 3);
+            attack.GetComponent<AutoDestroyer>().SetTimer(destroyTimeSinceDefeated);
         }
     }
 
@@ -64,6 +85,7 @@ public class SpiderController : MonoBehaviour, IEnemyAttackable
     {
         if (collision.CompareTag("Weapon"))
         {
+            animator.Play("Defeat");
             var colliders = GetComponentsInChildren<Collider2D>();
             foreach (var collider in colliders)
             {

@@ -12,6 +12,8 @@ public class OgreController : MonoBehaviour, IEnemyAttackable
     Transform player;
     SpriteRenderer rend;
 
+    bool isPaused;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -21,7 +23,21 @@ public class OgreController : MonoBehaviour, IEnemyAttackable
 
     void Update()
     {
-        if (canAttack)
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (!isPaused)
+            {
+                animator.speed = 0;
+                isPaused = true;
+            }
+            else
+            {
+                animator.speed = 1;
+                isPaused = false;
+            }
+        }
+
+        if (canAttack && !isPaused)
         {
             t += Time.deltaTime;
 
@@ -47,7 +63,7 @@ public class OgreController : MonoBehaviour, IEnemyAttackable
         var obj = Instantiate(this.kanabou);
         var kanabou = obj.GetComponent<KanabouController>();
         kanabou.Throw(transform, target, throwSpeed);
-        Destroy(obj, kanabouDestroyTime);
+        kanabou.GetComponent<AutoDestroyer>().SetTimer(kanabouDestroyTime);
     }
 
     public void SetAttackable(bool canAttack)
