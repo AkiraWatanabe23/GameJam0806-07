@@ -7,6 +7,7 @@ public class HeightUI : MonoBehaviour
     [SerializeField] float addValue = 0.1f;
     [SerializeField] bool isClimb = false;
     [SerializeField] bool isDrop = false;
+    [SerializeField] int deepDownCount = 0;//‰Šú’n“_‚æ‚è‰½‰ñ•ª‰º‚ÉƒJƒƒ‰‚ª“®‚¢‚Ä‚¢‚é‚©
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +19,29 @@ public class HeightUI : MonoBehaviour
     {
         if (isClimb == true)
         {
-            heightSlider.value += addValue;
-            isClimb = false;
+            if (deepDownCount > 0)
+            {
+                deepDownCount--;
+                isClimb = false;
+            }
+            else
+            {
+                heightSlider.value += addValue;
+                isClimb = false;
+            }
         }
         if (isDrop == true)
         {
-            heightSlider.value -= addValue;
-            isDrop = false;
+            if (heightSlider.value == 0)
+            {
+                deepDownCount++;
+                isDrop = false;
+            }
+            else
+            {
+                heightSlider.value -= addValue;
+                isDrop = false;
+            }
         }
     }
 

@@ -245,6 +245,10 @@ PrefabInstance:
       propertyPath: hitPointUI
       value: 
       objectReference: {fileID: 37277860}
+    - target: {fileID: 3856327356604839561, guid: 926435b835887b3408be53dddf6cf6c8, type: 3}
+      propertyPath: hitPointManager
+      value: 
+      objectReference: {fileID: 37277860}
     - target: {fileID: 4267112727830986849, guid: 926435b835887b3408be53dddf6cf6c8, type: 3}
       propertyPath: m_GravityScale
       value: 0
