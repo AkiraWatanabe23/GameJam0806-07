@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
@@ -10,6 +11,10 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     [SerializeField]
     private float _time = 0f;
 
+    [Header("UI")]
+    [SerializeField]
+    private Text _playTimeText = default;
+
     [Header("Debug")]
     [SerializeField]
     private bool _debugMode = true;
@@ -19,6 +24,15 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     private bool _isInitialized = false;
     private Transform _playerTransform = default;
 
+    protected float PlayTime
+    {
+        get => _time;
+        private set
+        {
+            _time = value;
+            if (_playTimeText != null) { _playTimeText.text = _time.ToString("F1"); }
+        }
+    }
     protected bool IsGoal
     {
         get
@@ -38,10 +52,10 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         if (_player == null)
         {
-            _player = GameObject.Find("Player");
+            _player = FindObjectOfType<PlayerMove>().gameObject;
         }
         _playerTransform = _player.transform;
-        _time = 0f;
+        PlayTime = 0f;
 
         PlayerPrefs.DeleteAll();
         Fade.Instance.StartFadeIn(() =>
@@ -56,12 +70,12 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         if (!_isInitialized) { return; }
 
-        _time += Time.deltaTime;
+        PlayTime += Time.deltaTime;
         if (IsGoal)
         {
             //ここでクリアしたデータを保存する
             PlayerPrefs.SetString("ClearData", "Clear");
-            PlayerPrefs.SetInt("Score", (int)(_time * 10));
+            PlayerPrefs.SetInt("Score", (int)(PlayTime * 10));
 
             SceneLoader.FadeLoad(SceneName.Result);
         }
