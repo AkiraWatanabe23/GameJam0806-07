@@ -10,15 +10,16 @@ public class OgreController : MonoBehaviour, IEnemyAttackable
     Animator animator;
     float t;
     Transform player;
-    SpriteRenderer rend;
 
     bool isPaused;
+    bool playerWasLeft;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         player = FindAnyObjectByType<PlayerMove>().transform;
-        rend = GetComponent<SpriteRenderer>();
+
+        playerWasLeft = player.position.x <= transform.position.x;
     }
 
     void Update()
@@ -47,13 +48,22 @@ public class OgreController : MonoBehaviour, IEnemyAttackable
                 t = 0;
             }
 
+
             if (player.position.x > transform.position.x)
             {
-                transform.localScale = new Vector2(-1, 1);
+                if (playerWasLeft)
+                {
+                    transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+                    playerWasLeft = false;
+                }
             }
             else
             {
-                transform.localScale = new Vector2(1, 1);
+                if (!playerWasLeft)
+                {
+                    transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+                    playerWasLeft = true;
+                }
             }
         }
     }
