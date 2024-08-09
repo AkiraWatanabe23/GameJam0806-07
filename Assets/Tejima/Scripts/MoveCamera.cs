@@ -19,7 +19,7 @@ public class MoveCamera : MonoBehaviour
         var position = transform.position;
         position.y = CameraMoveSpace * _currentHeightPoint;
 
-        transform.position = position;
+        //transform.position = position;
     }
 
     private void Update()
@@ -29,7 +29,7 @@ public class MoveCamera : MonoBehaviour
         {
             _currentHeightPoint++;
             var position = transform.position;
-            position.y = CameraMoveSpace * _currentHeightPoint;
+            position.y += CameraMoveSpace;
 
             transform.position = position;
             _heightUI.Climb();
@@ -38,7 +38,7 @@ public class MoveCamera : MonoBehaviour
         {
             _currentHeightPoint--;
             var position = transform.position;
-            position.y = CameraMoveSpace * _currentHeightPoint;
+            position.y -= CameraMoveSpace;
 
             transform.position = position;
             _heightUI.Drop();
