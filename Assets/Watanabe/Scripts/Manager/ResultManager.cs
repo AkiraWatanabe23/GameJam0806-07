@@ -1,8 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ResultManager : MonoBehaviour
 {
+    [SerializeField]
+    private RankingController _ranking = new();
+
+    #region UI Valiables
     [SerializeField]
     private Button _returnTitleButton = default;
     [SerializeField]
@@ -17,27 +22,14 @@ public class ResultManager : MonoBehaviour
     private GameObject _failedText = default;
     [SerializeField]
     private Sprite _failedImage = default;
+    #endregion
 
-    [Header("For Server")]
-    [SerializeField]
-    private GameObject[] _serverObjects = default;
-    [Header("For SpreadSheet")]
-    [SerializeField]
-    private GameObject[] _sheetObjects = default;
-
-    private void Awake()
-    {
-#if UNITY_EDITOR
-        foreach (var go in _sheetObjects) { go.SetActive(false); }
-#else
-        foreach (var go in _serverObjects) { go.SetActive(false); }
-#endif
-    }
-
-    private void Start()
+    private IEnumerator Start()
     {
         InitializeUI();
-        Fade.Instance.StartFadeIn();
+
+        yield return _ranking.Initialize();
+        Fade.Instance.StartFadeIn(() => Debug.Log("Finish Initialized"));
     }
 
     private void InitializeUI()
