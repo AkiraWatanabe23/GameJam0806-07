@@ -1,23 +1,24 @@
-﻿using Network;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
 /// <summary> SpreadSheetを用いたランキング処理 </summary>
-public class RankingController : MonoBehaviour
+[Serializable]
+public class RankingController
 {
     [Tooltip("対象のSpreadSheetのURL")]
     [SerializeField]
     private string _deployedSheetURL = "";
     [SerializeField]
-    private ConnectorView _rankingView = default;
+    private ResultView _rankingView = default;
 
     private List<int> _highScores = default;
 
-    private IEnumerator Start()
+    public IEnumerator Initialize()
     {
+        Debug.Log("Loading...");
         _highScores = new();
         //スコアの保存
         yield return SendData(PlayerPrefs.GetInt("Score"));

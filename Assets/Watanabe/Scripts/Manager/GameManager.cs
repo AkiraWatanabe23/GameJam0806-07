@@ -70,7 +70,6 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             AudioManager.Instance.PlayBGM(BGMType.InGame);
             _isInitialized = true;
         });
-
     }
 
     private void Update()

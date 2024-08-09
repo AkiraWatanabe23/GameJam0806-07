@@ -9,6 +9,10 @@ public class TitleSceneController : MonoBehaviour
     private Button _easyModeButton = default;
     [SerializeField]
     private Button _hardModeButton = default;
+    [SerializeField]
+    private GameObject _creditPanel = default;
+
+    private bool _isOpenCredit = false;
 
     private void Start()
     {
@@ -28,5 +32,18 @@ public class TitleSceneController : MonoBehaviour
         });
 
         Fade.Instance.StartFadeIn(() => AudioManager.Instance.PlayBGM(BGMType.Title));
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) { OpenCredit(); }
+    }
+
+    private void OpenCredit()
+    {
+        if (_isOpenCredit) { _isOpenCredit = false; }
+        else { _isOpenCredit = true; }
+
+        _creditPanel.SetActive(_isOpenCredit);
     }
 }
